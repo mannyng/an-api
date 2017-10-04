@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: shine
+  password: shine
+  pool: 5
+development:
+  <<: *default
+  database: myapi_development
+
+test:
+  <<: *default
+  database: myapi_test
+
+production:
+  <<: *default
+  database: hine_production
+  username: mantli
+  password: <%= ENV['EMAIR_DATABASE_PASSWORD'] %>
+
